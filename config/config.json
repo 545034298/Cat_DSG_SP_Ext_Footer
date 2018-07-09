@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "cat-dsg-sp-ext-1002-footer-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/catDsgSpExt1002Footer/CatDsgSpExt1002FooterApplicationCustomizer.js",
+          "manifest": "./src/extensions/catDsgSpExt1002Footer/CatDsgSpExt1002FooterApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CatDsgSpExt1002FooterApplicationCustomizerStrings": "lib/extensions/catDsgSpExt1002Footer/loc/{locale}.js"
+  }
+}

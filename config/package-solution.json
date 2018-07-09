@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "Catapult Systems - Footer",
+    "id": "3376353e-e363-4752-8fa0-1a91ab0072bf",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true
+  },
+  "paths": {
+    "zippedPackage": "solution/cat-dsg-sp-ext-1002-footer.sppkg"
+  }
+}

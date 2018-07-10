@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+
+    <ListInstance
+            CustomSchema="footerGroupsSchema.xml" 
+            FeatureId="00bfea71-de22-43b2-a848-c05709900100"
+            Title="FooterGroups" 
+            Description=""
+            TemplateType="100" 
+            Url="Lists/FooterGroups">
+    </ListInstance>
+
+     <ListInstance
+            CustomSchema="footerLinksSchema.xml" 
+            FeatureId="00bfea71-de22-43b2-a848-c05709900100"
+            Title="FooterLinks" 
+            Description=""
+            TemplateType="100" 
+            Url="Lists/FooterLinks">
+    </ListInstance>
+</Elements>

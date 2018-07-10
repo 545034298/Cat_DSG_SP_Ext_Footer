@@ -1,0 +1,198 @@
+<List xmlns:ows="Microsoft SharePoint" Title="Basic List" EnableContentTypes="TRUE" FolderCreation="false" Direction="$Resources:Direction;" Url="Lists/Basic List" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <MetaData>
+    <ContentTypes>
+   </ContentTypes>
+   <Fields>
+      <Field 
+          ID="{7b8475e4-df33-454f-9596-fae24914be9a}"
+          Name="Link"
+          StaticName="Link"
+          DisplayName="Link"
+          Type="Text"
+          Required="FALSE" 
+          MaxLength="255"
+          ShowInNewForm ="TRUE" 
+          ShowInEditForm ="TRUE"
+          ShowInViewForms="TRUE">
+      </Field>
+
+      <Field 
+           ID="{ce404d7e-b649-4bb0-8e3e-87356dfea9ea}"
+           Name="FooterSection"
+           StaticName="FooterSection"
+           DisplayName="Footer Section"
+           Type="Choice" 
+           Required="TRUE" 
+           Format="Dropdown"
+           FillInChoice="FALSE"
+           ShowInNewForm ="TRUE" 
+          ShowInEditForm ="TRUE"
+          ShowInViewForms="TRUE" 
+           Description="Indicates the section of the footer you want to add the link to. For example, choose &quot;Top&quot; if adding a link that will be grouped in the top section.">
+              <Default>Top</Default>
+              <CHOICES>
+                <CHOICE>Top</CHOICE>
+                <CHOICE>Middle</CHOICE>
+                <CHOICE>Bottom</CHOICE>
+              </CHOICES>
+      </Field>
+
+      <Field 
+          ID="{b718f08d-2258-44e5-9bcd-831dad3af0fd}"
+          Name="External"
+          StaticName="External"
+          DisplayName="External"
+          Type="Boolean"
+          ShowInNewForm ="TRUE" 
+          ShowInEditForm ="TRUE"
+          ShowInViewForms="TRUE">
+          <Default>0</Default>
+      </Field>
+
+      <Field 
+          ID="{80785b05-75f9-4ec6-bd7a-96a0b5cbb3f1}"
+          Name="Group" 
+          StaticName="Group"
+          DisplayName="Group"
+          Type="Lookup"  
+          Required="TRUE" 
+          ShowField="Title" RowOrdinal="0"
+          List="Lists/FooterGroups" 
+          RelationshipDeleteBehavior="None"
+          ShowInNewForm ="TRUE" 
+          ShowInEditForm ="TRUE"
+          ShowInViewForms="TRUE"/>
+
+      <Field
+        ID="{b0c25f82-cbf6-46e3-ae76-68fce94f7bf8}" 
+        Name="SortOrder"
+        StaticName="SortOrder"
+        DisplayName="SortOrder"
+        Required="TRUE"
+        Type="Number"
+        Min="1"
+        Decimals="0"  
+        Description="Use this column to control the sort order of items." 
+        Group="CatDsgSp Columns" 
+        Percentage="FALSE"
+        ShowInDisplayForm="TRUE"
+        ShowInNewForm ="TRUE" 
+        ShowInEditForm ="TRUE"
+        ShowInViewForms="TRUE"/>
+   </Fields>
+   <Views>
+      <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;"  SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/images/generic.png" Url="AllItems.aspx">
+       <XslLink Default="TRUE">main.xsl</XslLink>
+       <JSLink>clienttemplates.js</JSLink>
+       <RowLimit Paged="TRUE">30</RowLimit>
+       <Toolbar Type="Standard" />
+       <ViewFields>
+            <FieldRef Name="LinkTitle" />
+            <FieldRef Name="Link" />
+            <FieldRef Name="FooterSection" />
+            <FieldRef Name="External" />
+            <FieldRef Name="Group" />
+       </ViewFields>
+       <Query>
+         <OrderBy>
+           <FieldRef Name="ID" />
+         </OrderBy>
+       </Query>
+     </View>
+      <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="Top Section"  SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/images/generic.png" Url="Top Section.aspx">
+       <XslLink Default="TRUE">main.xsl</XslLink>
+       <JSLink>clienttemplates.js</JSLink>
+       <RowLimit Paged="TRUE">30</RowLimit>
+       <Toolbar Type="Standard" />
+       <ViewFields>
+            <FieldRef Name="LinkTitle" />
+            <FieldRef Name="Link" />
+            <FieldRef Name="FooterSection" />
+       </ViewFields>
+       <Query>
+          <OrderBy>
+            <FieldRef Name="ID" />
+          </OrderBy>
+          <Where>
+            <Eq>
+              <FieldRef Name="FooterSection" />
+              <Value Type="Text">Top</Value>
+            </Eq>
+          </Where>
+       </Query>
+     </View>
+     <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="Middle Section" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/images/generic.png" Url="Middle Section.aspx">
+       <XslLink Default="TRUE">main.xsl</XslLink>
+       <JSLink>clienttemplates.js</JSLink>
+       <RowLimit Paged="TRUE">30</RowLimit>
+       <Toolbar Type="Standard" />
+       <ViewFields>
+            <FieldRef Name="LinkTitle" />
+            <FieldRef Name="Link" />
+            <FieldRef Name="FooterSection" />
+       </ViewFields>
+       <Query>
+          <OrderBy>
+            <FieldRef Name="ID" />
+          </OrderBy>
+          <Where>
+            <Eq>
+              <FieldRef Name="FooterSection" />
+              <Value Type="Text">Middle</Value>
+            </Eq>
+          </Where>
+       </Query>
+     </View>
+      <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="Bottom Section" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/images/generic.png" Url="Bottom Section.aspx">
+       <XslLink Default="TRUE">main.xsl</XslLink>
+       <JSLink>clienttemplates.js</JSLink>
+       <RowLimit Paged="TRUE">30</RowLimit>
+       <Toolbar Type="Standard" />
+       <ViewFields>
+            <FieldRef Name="LinkTitle" />
+            <FieldRef Name="Link" />
+            <FieldRef Name="FooterSection" />
+            <FieldRef Name="External" />
+            <FieldRef Name="Group" />
+       </ViewFields>
+       <Query>
+          <OrderBy>
+            <FieldRef Name="ID" />
+          </OrderBy>
+          <Where>
+            <Eq>
+              <FieldRef Name="FooterSection" />
+              <Value Type="Text">Bottom</Value>
+            </Eq>
+          </Where>
+       </Query>
+     </View>
+      <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="Group By View" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/images/generic.png" Url="Group By View.aspx">
+       <XslLink Default="TRUE">main.xsl</XslLink>
+       <JSLink>clienttemplates.js</JSLink>
+       <RowLimit Paged="TRUE">30</RowLimit>
+       <Toolbar Type="Standard" />
+       <ViewFields>
+            <FieldRef Name="LinkTitle" />
+            <FieldRef Name="Link" />
+            <FieldRef Name="External" />
+            <FieldRef Name="SortOrder" />
+            <FieldRef Name="Group" />
+       </ViewFields>
+       <Query>
+          <GroupBy Collapse="TRUE" GroupLimit="30">
+            <FieldRef Name="FooterSection" Ascending="FALSE" />
+          </GroupBy>
+          <OrderBy>
+            <FieldRef Name="ID" />
+          </OrderBy>
+        </Query>
+     </View>
+   </Views>
+   <Forms>
+     <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+     <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+     <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+   </Forms>
+ </MetaData>
+</List>

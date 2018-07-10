@@ -3,9 +3,26 @@
   "solution": {
     "name": "Catapult Systems - Footer",
     "id": "3376353e-e363-4752-8fa0-1a91ab0072bf",
-    "version": "1.0.0.0",
+    "version": "1.0.0.1",
     "includeClientSideAssets": true,
-    "skipFeatureDeployment": true
+    "skipFeatureDeployment": true,
+    "features": [
+      {
+        "title": "Footer Provision",
+        "description": "Add footer related columns//list instance",
+        "id": "3963518d-f076-4d76-a033-86b4a953d709",
+        "version": "1.0.0.1",
+        "assets": {
+          "elementManifests": [
+            "elements.xml"
+          ],
+          "elementFiles": [
+            "footerGroupsSchema.xml",
+            "footerLinksSchema.xml"
+          ]
+        }
+      }
+    ]
   },
   "paths": {
     "zippedPackage": "solution/cat-dsg-sp-ext-1002-footer.sppkg"

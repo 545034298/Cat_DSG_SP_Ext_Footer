@@ -1,0 +1,47 @@
+<List xmlns:ows="Microsoft SharePoint" Title="Basic List" EnableContentTypes="FALSE" FolderCreation="false" Direction="$Resources:Direction;" Url="Lists/Basic List" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <MetaData>
+    <ContentTypes>
+   </ContentTypes>
+   <Fields>
+      <Field
+        ID="b0c25f82-cbf6-46e3-ae76-68fce94f7bf8" 
+        Name="SortOrder"
+        StaticName="SortOrder"
+        DisplayName="SortOrder"
+        Required="TRUE"
+        Type="Number"
+        Min="1"
+        Decimals="0"  
+        Description="Use this column to control the sort order of items." 
+        Group="CatDsgSp Columns" 
+        Percentage="FALSE"
+        ShowInDisplayForm="TRUE"
+        ShowInNewForm ="TRUE" 
+        ShowInEditForm ="TRUE"
+        ShowInViewForms="TRUE">
+    </Field>
+   </Fields>
+   <Views>
+     <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/images/generic.png" Url="AllItems.aspx">
+       <XslLink Default="TRUE">main.xsl</XslLink>
+       <JSLink>clienttemplates.js</JSLink>
+       <RowLimit Paged="TRUE">30</RowLimit>
+       <Toolbar Type="Standard" />
+       <ViewFields>
+            <FieldRef Name="LinkTitle" />
+            <FieldRef Name="SortOrder" />
+       </ViewFields>
+       <Query>
+         <OrderBy>
+           <FieldRef Name="ID" />
+         </OrderBy>
+       </Query>
+     </View>
+   </Views>
+   <Forms>
+     <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+     <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+     <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+   </Forms>
+ </MetaData>
+</List>

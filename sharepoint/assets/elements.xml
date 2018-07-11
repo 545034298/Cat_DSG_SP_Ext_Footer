@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  
+ <CustomAction
+        Title="Header"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="199ff381-d82d-40c3-b5e5-d2cb229a0779"
+        ClientSideComponentProperties="{&quot;footerGroupsListName&quot;: &quot;FooterGroups&quot;,
+&quot;footerLinksListName&quot;:&quot;FooterLinks&quot;}">
+    </CustomAction>
 
     <ListInstance
             CustomSchema="footerGroupsSchema.xml" 
